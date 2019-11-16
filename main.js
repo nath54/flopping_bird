@@ -47,8 +47,8 @@ function genObs(){
 		y2=ty1+espace;
 		ty2=tey-y2;
 		cl=[255,0,0];
-		obs.push( {tp:1,px:xx,py:y1,tx:tx,ty:ty1,cl:cl} );
-		obs.push( {tp:2,px:xx,py:y2,tx:tx,ty:ty2,cl:cl} );
+		obs.push( {tp:1,px:xx,py:y1,tx:tx,ty:ty1,cl:cl,pt:false} );
+		obs.push( {tp:2,px:xx,py:y2,tx:tx,ty:ty2,cl:cl,pt:false} );
 	}
 }
 
@@ -93,10 +93,9 @@ function ev(){
 }
 
 function getCursorPosition(canvas, event) {
-    const rect = canvas.getBoundingClientRect()
-    const x = event.clientX - rect.left
-    const y = event.clientY - rect.top
-    console.log("x: " + x + " y: " + y)
+    //const rect = canvas.getBoundingClientRect()
+    //const x = event.clientX - rect.left
+    //const y = event.clientY - rect.top
     jump();
 }
 
@@ -125,5 +124,4 @@ function main(){
     window.requestAnimationFrame(boucle);
 }
 
-alert("yo");
 main();
