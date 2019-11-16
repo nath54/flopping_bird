@@ -60,6 +60,10 @@ function aff(){
 		ctx.fillStyle=toColor(o.cl);
 		ctx.fillRect(o.px,o.py,o.tx,o.ty);
 	}
+	ctx.font = "50px Arial";
+	ctx.fillStyle="rgb(0,0,200)";
+	xx=10*(""+score).length;
+    ctx.fillText(score+"", xx, 50);
 }
 
 function ev(){
@@ -80,6 +84,10 @@ function ev(){
 		    o.px-=vit;
 		    if( collide(bide, o)){
 			    perdu=true;
+		    }
+		    if( o.tp==1 && o.px < bide.px && !o.pt ){
+		        o.pt=true;
+		        score+=1;
 		    }
 		    if( o.px>0 ){
 		        nobs.push(o);
