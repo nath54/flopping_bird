@@ -6,7 +6,7 @@ var dt=new Date();
 const tex=canvas.width;
 const tey=canvas.height;
 var encour=true;
-var bide={px:50,py:tey/2,tx:30,ty:30,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
+var bide={px:50,py:tey/2,tx:60,ty:60,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
 var nobs=[];
 var obs=[];
 var nbobs=3;
@@ -59,7 +59,8 @@ function aff(){
 	ctx.fillRect(0,0,tex,tey);
 	ctx.drawImage(bg, bgx , 0 , bgtx*(tey/bgty) , tey)
 	ctx.drawImage(bg, bgx+bgtx*(tey/bgty) , 0, bgtx*(tey/bgty) , tey)
-	ctx.drawImage( bide.imgs[bide.an] , bide.px , bide.py , bide.tx , bide.ty );
+	//bird
+	ctx.drawImage( bide.imgs[bide.an] , bide.px , bide.py , bide.tx , bide.ty);
 	for(o of obs){
 		ctx.fillStyle=toColor(o.cl);
 		ctx.fillRect(o.px,o.py,o.tx,o.ty);
@@ -131,7 +132,7 @@ function affperdu(){
 
 function replay(){
     encour=true;
-    bide={px:50,py:tey/2,tx:30,ty:30,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
+    bide={px:50,py:tey/2,tx:50,ty:50,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
     nobs=[];
     obs=[];
     nbobs=3;
@@ -167,4 +168,13 @@ function main(){
     }
     window.requestAnimationFrame(boucle);
 }
+
+ctx.fillStyle="rgb(0,100,200)";
+ctx.fillRect(0,0,tex,tey);
+ctx.font = "50px Serif";
+ctx.fillStyle="rgb(200,200,0)";
+ctx.fillText("Appuyez sur", 100 ,200);
+ctx.fillText("le bouton (jouer)", 100 ,250);
+ctx.fillText("pour jouer !", 100 ,300);
+
 
