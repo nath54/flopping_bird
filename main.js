@@ -129,6 +129,30 @@ function affperdu(){
     ctx.fillText("score : "+score, 50, 400);
 }
 
+function replay(){
+    encour=true;
+    bide={px:50,py:tey/2,tx:30,ty:30,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
+    nobs=[];
+    obs=[];
+    nbobs=3;
+    distobs=300;
+    vit=2;
+    cgrav=0.2;
+    dev=dt.getTime();
+    tev=10;
+    perdu=false;
+    acc=3.5;
+    score=0;
+    espace=200;
+    bg=bgs[parseInt(Math.random()*bgs.length)];
+    bgtx=bg.width;
+    bgty=bg.height;
+    bgx=0;
+    document.getElementById("jouer").innerHTML="Rejouer";
+    alert("ready ?");
+    main();
+}
+
 function main(){
 
     function boucle(){
@@ -144,5 +168,3 @@ function main(){
     window.requestAnimationFrame(boucle);
 }
 
-alert("ready ?");
-main();
