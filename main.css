@@ -1,0 +1,12 @@
+canvas{
+    width:99%;
+    border:2px solid black;
+}
+button{
+	width:99%;
+	height:10%;
+	text-align:center;
+	background-color:rgb(255,0,0);
+	font-size:50px;
+	border-radius:10px;
+}
