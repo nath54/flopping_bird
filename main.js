@@ -5,7 +5,7 @@ var dt=new Date();
 var tex=canvas.width;
 var tey=canvas.height;
 var encour=true;
-var bide={px:50,py:tey/2,tx:30,ty:30,vity:0,cl:[30,200,50]};
+var bide={px:50,py:tey/2,tx:30,ty:30,vity:0,an:0,dan:dt.getTime(),tpan:100,imgs:[document.getElementById("b1"),document.getElementById("b2"),document.getElementById("b3"),document.getElementById("b4"),document.getElementById("b5"),document.getElementById("b6"),document.getElementById("b7"),document.getElementById("b8")]};
 var nobs=[];
 var obs=[];
 var nbobs=2;
@@ -55,8 +55,7 @@ function genObs(){
 function aff(){
 	ctx.fillStyle="rgb(200,200,200)";
 	ctx.fillRect(0,0,tex,tey);
-	ctx.fillStyle=toColor(bide.cl);
-	ctx.fillRect(bide.px,bide.py,bide.tx,bide.ty);
+	ctx.drawImage( bide.imgs[bide.an] , bide.px , bide.py , bide.tx , bide.ty );
 	for(o of obs){
 		ctx.fillStyle=toColor(o.cl);
 		ctx.fillRect(o.px,o.py,o.tx,o.ty);
@@ -67,6 +66,13 @@ function ev(){
 	var dt=new Date();
 	if( dt.getTime()-dev>=tev){
 		dev=dt.getTime();
+		if(dt.getTime()-bide.dan>=bide.tpan){
+		    bide.dan=dt.getTime();
+		    bide.an+=1;
+		    if( bide.an >= bide.imgs.length ){
+		        bide.an=0;
+		    }
+		}
 		if(bide.vity<5) bide.vity+=cgrav;
 	    bide.py+=bide.vity;
 	    nobs=[];
