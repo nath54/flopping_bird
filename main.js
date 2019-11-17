@@ -172,11 +172,11 @@ function main(){
 
 ctx.fillStyle="rgb(0,100,200)";
 ctx.fillRect(0,0,tex,tey);
-ctx.font = "35px Serif";
+ctx.font = "30px Serif";
 ctx.fillStyle="rgb(200,200,0)";
 ctx.fillText("Appuyez sur", 50 ,200);
 ctx.fillText("le bouton (jouer)", 50 ,250);
 ctx.fillText("pour jouer !", 50 ,300);
 ctx.drawImage(bide.imgs[bide.imgs.length-1], 100, 500, 100, 100)
-ctx.fillText("Attendez juste qu'un oiseau apparaisse à l'écran", 50 ,300);
+ctx.fillText("Attendez juste qu'un oiseau apparaisse à l'écran", 10 ,600);
 
