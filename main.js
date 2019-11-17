@@ -16,9 +16,10 @@ var cgrav=0.2;
 var dev=dt.getTime();
 var tev=10;
 var perdu=false;
-var acc=5;
+var acc=7;
 var score=0;
 var espace=200;
+var els=[];
 
 const bgs=[document.getElementById("bg1"),document.getElementById("bg2"),document.getElementById("bg3"),document.getElementById("bg4"),document.getElementById("bg6"),document.getElementById("bg7"),document.getElementById("bg8"),document.getElementById("bg9"),document.getElementById("bg10"),document.getElementById("bg11"),document.getElementById("bg12")];
 
@@ -171,10 +172,10 @@ function main(){
 
 ctx.fillStyle="rgb(0,100,200)";
 ctx.fillRect(0,0,tex,tey);
-ctx.font = "50px Serif";
+ctx.font = "35px Serif";
 ctx.fillStyle="rgb(200,200,0)";
-ctx.fillText("Appuyez sur", 100 ,200);
-ctx.fillText("le bouton (jouer)", 100 ,250);
-ctx.fillText("pour jouer !", 100 ,300);
+ctx.fillText("Appuyez sur", 50 ,200);
+ctx.fillText("le bouton (jouer)", 50 ,250);
+ctx.fillText("pour jouer !", 50 ,300);
 
 
