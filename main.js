@@ -177,5 +177,6 @@ ctx.fillStyle="rgb(200,200,0)";
 ctx.fillText("Appuyez sur", 50 ,200);
 ctx.fillText("le bouton (jouer)", 50 ,250);
 ctx.fillText("pour jouer !", 50 ,300);
-ctx.drawImage(bide.imgs[0], 100, 500, 100, 100)
+ctx.drawImage(bide.imgs[bide.imgs.length-1], 100, 500, 100, 100)
+ctx.fillText("Attendez juste qu'un oiseau apparaisse à l'écran", 50 ,300);
 
