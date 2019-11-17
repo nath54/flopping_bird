@@ -16,7 +16,7 @@ var cgrav=0.2;
 var dev=dt.getTime();
 var tev=10;
 var perdu=false;
-var acc=3.5;
+var acc=5;
 var score=0;
 var espace=200;
 
