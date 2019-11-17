@@ -117,7 +117,6 @@ canvas.addEventListener('mouseup', function(e) {
     getCursorPosition(canvas, e)
 })
 
-
 function affperdu(){
 	ctx.fillStyle="rgb(20,20,20)";
 	ctx.fillRect(0,0,tex,tey);
@@ -173,6 +172,7 @@ function main(){
 var enc_charg=true;
 
 function chargement(){
+	enc_charg=true;
 	function boucle_c(){
 		var dt=new Date();
 		if(dt.getTime()-bide.dan>=bide.tpan){
@@ -189,7 +189,7 @@ function chargement(){
         ctx.fillText("Appuyez sur", 50 ,200);
         ctx.fillText("le bouton (jouer)", 50 ,250);
         ctx.fillText("pour jouer !", 50 ,300);
-        ctx.drawImage(bide.imgs[0], 100, 350, 150, 150)
+        ctx.drawImage(bide.imgs[bide.an], 100, 350, 150, 150)
        ctx.fillText("Attendez juste qu'un oiseau", 10 ,600);
        ctx.fillText("apparaisse à l'écran", 10 ,630);
        if(enc_charg) window.requestAnimationFrame(boucle_c);
