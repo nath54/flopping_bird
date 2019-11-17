@@ -156,7 +156,7 @@ function replay(){
 }
 
 function main(){
-
+    enc_charg=false;
     function boucle(){
         ev();
         aff();
@@ -170,14 +170,32 @@ function main(){
     window.requestAnimationFrame(boucle);
 }
 
-ctx.fillStyle="rgb(0,100,200)";
-ctx.fillRect(0,0,tex,tey);
-ctx.font = "30px Serif";
-ctx.fillStyle="rgb(200,200,0)";
-ctx.fillText("Appuyez sur", 50 ,200);
-ctx.fillText("le bouton (jouer)", 50 ,250);
-ctx.fillText("pour jouer !", 50 ,300);
-ctx.drawImage(bide.imgs[0], 100, 350, 150, 150)
-ctx.fillText("Attendez juste qu'un oiseau", 10 ,600);
-ctx.fillText("apparaisse à l'écran", 10 ,630);
+var enc_charg=true;
+
+function chargement(){
+	function boucle_c(){
+		var dt=new Date();
+		if(dt.getTime()-bide.dan>=bide.tpan){
+		    bide.dan=dt.getTime();
+		    bide.an+=1;
+		    if( bide.an >= bide.imgs.length ){
+		        bide.an=0;
+		    }
+		}
+		ctx.fillStyle="rgb(0,100,200)";
+        ctx.fillRect(0,0,tex,tey);
+        ctx.font = "30px Serif";
+        ctx.fillStyle="rgb(200,200,0)";
+        ctx.fillText("Appuyez sur", 50 ,200);
+        ctx.fillText("le bouton (jouer)", 50 ,250);
+        ctx.fillText("pour jouer !", 50 ,300);
+        ctx.drawImage(bide.imgs[0], 100, 350, 150, 150)
+       ctx.fillText("Attendez juste qu'un oiseau", 10 ,600);
+       ctx.fillText("apparaisse à l'écran", 10 ,630);
+       if(enc_charg) window.requestAnimationFrame(boucle_c);
+	}
+	window.requestAnimationFrame(boucle_c);
+}
+
+chargement();
 
